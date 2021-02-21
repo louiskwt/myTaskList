@@ -19,19 +19,29 @@
                             Task List
                         </span>
                         <div class="row">
-                            <form id="task-form">
+                            <form id="task-form" autocomplete="off">
                                 <div class="input-field col s12">
                                     <input type="text" name="" id="task">
                                     <label for="task">New task</label>
                                 </div>
-                                <input type="submit" value="Add Task" class="btn" autocomplete="off"/>
+                                <input type="submit" value="Add Task" class="btn" autocomplete="false"/>
                             </form>
+                            <!-- modal -->
+                            <div class="modal" id="add-task-modal">
+                                <div class="modal-content">
+                                    <h4>Wait</h4>
+                                    <p>Nothing to add! You cannot leave the input empty. Please enter something to add.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="" class="modal-action modal-close waves-effect waves.light btn">Okay</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card-action">
                         <h5 id="task-title">Tasks</h5>
                         <div class="input-field col s12">
-                            <input type="text" name="" id="filter" autocomplete="off"/>
+                            <input type="text" name="" id="filter" autocomplete="false"/>
                             <label for="filter">Filter task</label>
                         </div>
                         <ul class="collection">

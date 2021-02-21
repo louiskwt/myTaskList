@@ -22,7 +22,7 @@ function loadEventListener() {
      
 }
 
-// Get tasks
+// Get tasks from LS
 function getTasks() {
     let tasks;
     if(localStorage.getItem('tasks') === null) {
@@ -52,8 +52,12 @@ function getTasks() {
 // Add task 
 function addTask(e) {
     e.preventDefault();
+    // check if the input value is empty
     if(taskInput.value === '') {
-        alert('Add a task');
+        // popup a modal to tell the user to enter something
+        const addTaskModal = document.querySelector('#add-task-modal');
+        const instance = M.Modal.init(addTaskModal, {startingTop: '16%'});
+        instance.open();
     } else {
         // create li element
         const li = document.createElement('li');
